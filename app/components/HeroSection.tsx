@@ -61,10 +61,13 @@ export default function HeroSection() {
             >
               <div className="relative w-full lg:w-[600px] h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                <img
+                <Image
                   src="/images/hero-taxi.jpg"
                   alt="夜の繁華街を走る黒いタクシー"
-                  className="w-full h-full object-cover object-center"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  priority
+                  className="rounded-2xl"
                 />
               </div>
             </motion.div>
