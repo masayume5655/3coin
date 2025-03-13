@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Star, Users } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import Image from "next/image";
 
 const companies = [
   {
@@ -27,7 +28,7 @@ const companies = [
     benefits: ["昇給年2回", "家族手当あり", "退職金制度"],
     rating: 4.4,
     employees: 150,
-    image: "https://images.unsplash.com/photo-1559829604-549d05fb4e44?auto=format&fit=crop&q=80",
+    image: "/images/3coin-imege.png",
   },
 ];
 
@@ -60,11 +61,13 @@ export default function JobListSection() {
             >
               <Card className="overflow-hidden">
                 <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/3">
-                    <img
+                  <div className="relative md:w-1/3 h-[250px]">
+                    <Image
                       src={company.image}
                       alt={company.name}
-                      className="w-full h-full object-cover"
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      className="w-full h-full"
                     />
                   </div>
                   <div className="p-6 md:w-2/3">
